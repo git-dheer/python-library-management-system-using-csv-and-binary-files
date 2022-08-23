@@ -1,4 +1,4 @@
-from re import U
+
 import time
 import datetime
 import csv 
@@ -93,14 +93,35 @@ def user():
             email = input ("enter email : ")
             data [c-1,3] = email
             print("updated successfully ! ")
-            
-            
+        elif what == 2 :
+            mobile_number = input("enter mobile number : ")
+            data [c-1,4] = mobile_number
+            print("updated successfully ! ")
+        elif what == 3 :
+            usertype = input("enter the usertype : ")
+            data [c-1,-1] = usertype
+            print("updated successfully ! ")
+        w.writerows(data)   
 
         f.close()
-    def display_details():
-        pass
-    def search ():
-        pass
+    def display_details():  # for searching and displaying 
+        userid = input("enter the user id : ")
+        # user data storing csv file format 
+        # user id ,user name ,password ,email,mobile number ,user type 
+        # file name = user.csv
+        f = open('user.csv','r')   # opening file 
+        r = csv.writer(f)   # reader object 
+        c = 0
+        for i in r :
+            if i[0] == userid :
+                a = i 
+                c =1
+                break  
+        if c = 1 :
+            print(f"user details :\n user id = {a[0]} \n username = {a[1]} \n email = {a[3]} \n mobile number = {a[4]} usertype = {a[-1]}")
+        else :
+            print("user not found ! ")   
+        
 
     pass 
 
