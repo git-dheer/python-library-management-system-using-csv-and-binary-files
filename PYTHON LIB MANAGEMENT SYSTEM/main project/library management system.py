@@ -1,9 +1,9 @@
 
-import time
-import datetime
+# import time
+# import datetime
 import csv 
 
-def user():
+def user(v):
     # user data storing csv file format 
     # user id ,user name ,password ,email,mobile number ,user type 
     # file name = user.csv
@@ -69,7 +69,7 @@ def user():
         # user id ,user name ,password ,email,mobile number ,user type 
         # file name = user.csv
         f = open('user.csv','r')   # opening file 
-        r = csv.writer(f)   # reader object 
+        r = csv.reader(f)   # reader object 
         data = []
         for i in r :
             data.append(i)
@@ -117,7 +117,7 @@ def user():
                 a = i 
                 c =1
                 break  
-        if c = 1 :
+        if c == 1 :
             print(f"user details :\n user id = {a[0]} \n username = {a[1]} \n email = {a[3]} \n mobile number = {a[4]} usertype = {a[-1]}")
         else :
             print("user not found ! ")   
@@ -125,7 +125,7 @@ def user():
 
     pass 
 
-def student():
+def student(v):
     def issue():
         pass
     def renew ():
@@ -134,7 +134,7 @@ def student():
         pass
     
     pass
-def staff():
+def staff(v):
     def issue():
         pass
     def renew ():
@@ -143,20 +143,53 @@ def staff():
         pass
 
     pass
-def librarian ():
+def librarian (v):
     def add_book():
+        f = open ('books.csv','a' )
+        w = csv.writer (f)
+        n = int(input("how many different books do u want to add : "))
+        for i in range (n) :
+            for i in range (1):
+                a = input("enter the name of the book : ")
+                b = input("enter the book id : ")
+                c = input ("enter the name of the book publisher : ")
+                d = input ("enter the name of the author : ")
+                e = input ("enter the price for the book : ")
+                ff = input("enter the total number of this book that is to be added : ")
+                l = [a,b,c,d,e,ff]
+                w.writerow(l)
+        f.close ()
+
         pass
     def delete_book():
+
         pass
     def update_books():
         pass
 
 
     pass
-def account():
+def account():  # delete user account , reset user account 
     pass
 def book ():
     pass
+
+def menus (n):
+    def menu1():
+        print('''
+                              
+            
+
+        ''')
+        pass
+    def menu2():
+        pass
+    def menu3():
+        pass
+    def menu4():
+        pass
+    def menu5():
+        pass
 
 
 # main program 
